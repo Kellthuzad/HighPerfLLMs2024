@@ -82,6 +82,7 @@ def calculate_loss(params, model, inputs, outputs):
    return jnp.mean(loss)
 
 def main():
+    #loads a dataset, and sets them in batch sizes
     ds = tfds.load('lm1b', split='train', shuffle_files=False)
     ds = ds.batch(BATCH_IN_SEQUENCES)
 
